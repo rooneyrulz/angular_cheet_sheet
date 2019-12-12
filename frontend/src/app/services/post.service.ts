@@ -10,12 +10,34 @@ import { Observable } from "rxjs";
 export class PostService {
   constructor(private http: HttpClient) {}
 
-  getPost(): Observable<Post[]> {
+  getPosts(): Observable<Post[]> {
     const headers = new HttpHeaders({
       "Content-Type": "application/json"
     });
     return this.http.get<Post[]>("https://jsonplaceholder.typicode.com/posts", {
       headers
     });
+  }
+
+  getPost(id: string): Observable<Post> {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json"
+    });
+    return this.http.get<Post>(
+      `https://jsonplaceholder.typicode.com/posts/${id}`,
+      {
+        headers
+      }
+    );
+  }
+
+  deletePost(id: string): Observable<Boolean> {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json"
+    });
+    return this.http.delete<boolean>(
+      `https://jsonplaceholder.typicode.com/posts/${id}`,
+      { headers }
+    );
   }
 }

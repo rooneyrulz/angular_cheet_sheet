@@ -1,0 +1,13 @@
+<div class="posts-container">
+  <mat-card class="mb-3">
+    <mat-card-title>
+      {{post.title}}
+    </mat-card-title>
+    <mat-card-content>
+      {{post.body}}
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="deletePost(post.id)" mat-raised-button color="accent">Remove</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

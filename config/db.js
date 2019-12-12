@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
-export default () => {
+export default async () => {
     try {
         const con = await mongoose.connect(
-          'mongodb://localhost:27017/blog_post_api',
+          'mongodb://ruzny:ruzny123@ds253368.mlab.com:53368/angular_cheat_sheet',
           {
             useNewUrlParser: true,
             useCreateIndex: true,

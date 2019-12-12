@@ -1,1 +1,13 @@
+<div class="posts-container">
+  <mat-card *ngFor="let post of postList" class="mb-3">
+    <mat-card-title>
+      {{post.title}}
+    </mat-card-title>
+    <mat-card-actions>
+      <button (click)="viewDetail(post.id)" mat-raised-button color="primary">View Detail</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
 
